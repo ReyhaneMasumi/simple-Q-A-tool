@@ -11,7 +11,27 @@
     @apply font-extrabold text-2xl text-Naturals/Black;
   }
 
+  .card-title {
+    @apply font-bold text-base text-Naturals/Black;
+  }
+
+  .black-14 {
+    @apply font-bold text-sm text-Naturals/Black;
+  }
+
+  .black-12 {
+    @apply font-bold text-xs text-Naturals/Black;
+  }
+
+  .grey-12 {
+    @apply font-bold text-xs text-Gray/Dark;
+  }
+
   .flex-between-center {
     @apply flex flex-row justify-between items-center;
+  }
+
+  .flex-col-start {
+    @apply flex flex-col justify-start;
   }
 }

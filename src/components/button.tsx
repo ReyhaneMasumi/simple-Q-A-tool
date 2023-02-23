@@ -21,7 +21,10 @@ function Button({ variant = 'primary', ...props }: IProps) {
   return (
     <button
       className={
-        'py-2 px-5 rounded-md font-bold text-xs ' + variantStyle[variant]
+        'w-fit py-2 px-5 rounded-md font-bold text-xs ' +
+        props.className +
+        ' ' +
+        variantStyle[variant]
       }
     >
       {props.children}
