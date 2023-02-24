@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import Button from '../components/button';
 import Modal from '../components/modal';
@@ -10,12 +10,6 @@ import { ReactComponent as PlusIcon } from '../assets/images/plus.svg';
 function Header() {
   const [isModalOpen, setIsOpen] = useState(false);
 
-  useEffect(() => {
-    console.log(
-      '🚀 ~ file: header.tsx:16 ~ Header ~ isModalOpen:',
-      isModalOpen
-    );
-  }, [isModalOpen]);
   return (
     <header className="flex-between-center sticky top-0 w-full h-16 px-14 py-4 bg-white overflow-hidden z-10 shadow-header">
       <div className="title">سوالات</div>

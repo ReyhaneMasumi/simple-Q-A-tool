@@ -1,26 +1,31 @@
-import Button from '../components/button';
-import Card from '../components/card';
+import { lazy, Suspense, useEffect, useMemo, useState } from 'react';
+
+import type { LazyExoticComponent } from 'react';
+
+const Details = lazy(() => import('../view/details'));
+const Questions = lazy(() => import('../view/questions'));
+
+const viewComponent: Record<string, LazyExoticComponent<() => JSX.Element>> = {
+  '/': Questions,
+  '/details': Details,
+};
+
+const pathname = window.location.pathname;
 
 function Main() {
+  const [path, setPath] = useState(pathname);
+
+  useEffect(() => {
+    setPath(pathname);
+  }, []);
+
+  const View = useMemo(() => viewComponent[path], [path]);
+
   return (
     <main className="sticky top-16 w-full h-main px-14 py-4 bg-backgroundColor overflow-auto">
-      <Card
-        imgURL="./assets/images/q-profile-img.svg"
-        title="مشکل در Auth در React"
-        date="2022-10-23T18:25"
-        comments={20}
-      >
-        <div className="flex-col-start gap-4 w-full px-6 py-3">
-          <div className="self-start black-14">
-            سلام من میخوام یه authentication ساده تو react بسازم اما این error
-            رو بهم میده. نمیدونم مشکل از کجاست. عکس خروجی console رو هم گذاشتم
-            که ببینید دقیقا چه مشکلی وجود داره
-          </div>
-          <Button className="self-end" variant="secondary">
-            مشاهده جزئیات
-          </Button>
-        </div>
-      </Card>
+      <Suspense>
+        <View />
+      </Suspense>
     </main>
   );
 }
