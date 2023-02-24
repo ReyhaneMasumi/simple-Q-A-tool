@@ -17,6 +17,7 @@ const viewComponent: Record<string, LazyExoticComponent<() => JSX.Element>> = {
 function Main() {
   const { path } = usePath();
 
+  // use this solution instead of react-router-dom(Routes/Route)
   const View = useMemo(() => viewComponent[path], [path]);
 
   return (

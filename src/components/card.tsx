@@ -1,7 +1,6 @@
 import { memo } from 'react';
 
 import { ReactComponent as SeperatorIcon } from '../assets/images/seperator.svg';
-import { ReactComponent as CommentIcon } from '../assets/images/Comment.svg';
 
 import type { ReactElement } from 'react';
 
@@ -9,11 +8,11 @@ interface IProps {
   imgURL: string;
   title: string;
   date: string;
-  comments: number;
+  customElement: ReactElement;
   children: ReactElement;
 }
 
-function Card({ imgURL, title, date, comments, children }: IProps) {
+function Card({ imgURL, title, date, customElement, children }: IProps) {
   return (
     <div className="w-full min-h-[155px] bg-Gray/Lightest shadow-card rounded-lg">
       <header className="flex-between-center sticky top-0 w-full h-14 px-6 py-3 bg-white overflow-hidden z-10 shadow-header rounded-lg">
@@ -37,12 +36,7 @@ function Card({ imgURL, title, date, comments, children }: IProps) {
               </span>
             </div>
           </div>
-          <div className="flex-between-center gap-2">
-            <CommentIcon />
-            <span className="grey-12">
-              {new Intl.NumberFormat('fa-IR').format(comments)}
-            </span>
-          </div>
+          {customElement}
         </div>
       </header>
       {children}

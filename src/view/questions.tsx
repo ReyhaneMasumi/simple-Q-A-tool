@@ -1,13 +1,22 @@
 import Button from '../components/button';
 import Card from '../components/card';
 
+import { ReactComponent as CommentIcon } from '../assets/images/Comment.svg';
+
 function Questions() {
   return (
     <Card
       imgURL="./assets/images/q-profile-img.svg"
       title="مشکل در Auth در React"
       date="2022-10-23T18:25"
-      comments={20}
+      customElement={
+        <div className="flex-between-center gap-2">
+          <CommentIcon />
+          <span className="grey-12">
+            {new Intl.NumberFormat('fa-IR').format(20)}
+          </span>
+        </div>
+      }
     >
       <div className="flex-col-start gap-4 w-full px-6 py-3">
         <div className="self-start black-14">

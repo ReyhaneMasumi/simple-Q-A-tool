@@ -1,5 +1,7 @@
 import { useMemo, useState } from 'react';
 
+import NewQuestion from '../view/new-question';
+
 import Button from '../components/button';
 import Modal from '../components/modal';
 
@@ -8,7 +10,6 @@ import usePath from '../hooks/usePath';
 import { ReactComponent as ProfileImg } from '../assets/images/profile-img.svg';
 import { ReactComponent as ArrowIcon } from '../assets/images/arrow.svg';
 import { ReactComponent as PlusIcon } from '../assets/images/plus.svg';
-import NewQuestion from '../view/new-question';
 
 const headTitle: Record<string, string> = {
   '/': 'لیست سوالات',

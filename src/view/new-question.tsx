@@ -19,7 +19,7 @@ function NewQuestion({ onClose }: IProps) {
         </div>
         <CloseIcon className="cursor-pointer" onClick={onClose} />
       </header>
-      <div className="flex-col-start gap-3.5 w-full px-6 py-3">
+      <div className="flex-col-start gap-3.5 w-full px-5 py-6">
         <div className="flex-col-start gap-2.5 w-full">
           <div className="grey-dark-12 ">موضوع</div>
           <Input className="w-full" />

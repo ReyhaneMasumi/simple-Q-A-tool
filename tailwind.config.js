@@ -14,6 +14,9 @@ module.exports = {
       'Gray/Dark': '#777777',
       'Gray/Light': '#EEEEEE',
       'Gray/Lightest': '#f9f9f9',
+      'Secondary/VeryVeryLight': '#E4E9EC',
+      'Annotations/Success': '#66CB9F',
+      'Annotations/Error': '#F16063',
       neutral: colors.neutral,
     },
     extend: {

@@ -2,7 +2,7 @@ import { memo } from 'react';
 
 import type { DetailedHTMLProps, ButtonHTMLAttributes } from 'react';
 
-type Variants = 'primary' | 'secondary' | 'cancel';
+type Variants = 'primary' | 'secondary' | 'cancel' | 'success' | 'error';
 
 interface IProps
   extends DetailedHTMLProps<
@@ -16,6 +16,10 @@ const variantStyle: { [key in Variants]: string } = {
   primary: 'bg-primary text-white',
   secondary: 'border border-primary text-primary',
   cancel: 'text-primary',
+  success:
+    'bg-transparent text-Annotations/Success border border-Secondary/VeryVeryLight',
+  error:
+    'bg-transparent text-Annotations/Error border border-Secondary/VeryVeryLight',
 };
 
 function Button({ variant = 'primary', ...props }: IProps) {
