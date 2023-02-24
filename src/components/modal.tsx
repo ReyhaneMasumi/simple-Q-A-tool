@@ -71,13 +71,13 @@ export default function Modal({
           <div
             ref={backdrop}
             className={
-              'flex items-center justify-center fixed inset-0 z-50 bg-[#00000060] backdrop-blur-sm opacity-0 transition-all delay-200 ' +
+              'flex items-center justify-center fixed inset-0 z-50 bg-[#00000060] backdrop-blur-xs opacity-0 transition-all delay-200 ' +
               (active && open ? 'duration-200 delay-[0] opacity-100' : '')
             }
           >
             <div
               className={
-                'relative rounded-lg overflow-hidden scale-90 transition-all opacity-0 ' +
+                'w-2/5 relative rounded-lg overflow-hidden scale-90 transition-all opacity-0 ' +
                 (active && open
                   ? 'scale-100 duration-300 delay-100 opacity-100'
                   : '')

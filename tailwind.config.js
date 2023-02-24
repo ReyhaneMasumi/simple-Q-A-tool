@@ -12,6 +12,7 @@ module.exports = {
       'Naturals/Black': '#222222',
       'Gray/Darker': '#454545',
       'Gray/Dark': '#777777',
+      'Gray/Light': '#EEEEEE',
       'Gray/Lightest': '#f9f9f9',
       neutral: colors.neutral,
     },

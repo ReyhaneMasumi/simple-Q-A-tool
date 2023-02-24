@@ -19,8 +19,16 @@
     @apply font-bold text-sm text-Naturals/Black;
   }
 
+  .black-normal-14 {
+    @apply font-normal text-sm text-Naturals/Black;
+  }
+
   .black-12 {
     @apply font-bold text-xs text-Naturals/Black;
+  }
+
+  .grey-dark-12 {
+    @apply font-bold text-xs text-Gray/Darker;
   }
 
   .grey-12 {
@@ -29,6 +37,10 @@
 
   .flex-between-center {
     @apply flex flex-row justify-between items-center;
+  }
+
+  .flex-end-center {
+    @apply flex flex-row justify-end items-center;
   }
 
   .flex-col-start {
