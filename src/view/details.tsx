@@ -7,6 +7,7 @@ import Textarea from '../components/textarea';
 import Answers from './_answers';
 
 import { Context, questionType } from '../context';
+import { BASE_API } from '../configs';
 
 import { ReactComponent as CommentIcon } from '../assets/images/Comment.svg';
 
@@ -29,7 +30,7 @@ function Details() {
   // create a new answer
   const sendAnswer = () => {
     if (!currQuestionID) return;
-    fetch('http://localhost:3004/answers', {
+    fetch(`${BASE_API}/answers`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

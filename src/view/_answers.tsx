@@ -4,6 +4,7 @@ import Button from '../components/button';
 import Card from '../components/card';
 
 import { Context } from '../context';
+import { BASE_API } from '../configs';
 
 import { ReactComponent as HappyIcon } from '../assets/images/Happy.svg';
 import { ReactComponent as SadIcon } from '../assets/images/Sad.svg';
@@ -28,7 +29,7 @@ function Answers() {
     pointType: 'positive' | 'negative',
     point: number
   ) => {
-    fetch(`http://localhost:3004/answers/${id}`, {
+    fetch(`${BASE_API}/answers/${id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',

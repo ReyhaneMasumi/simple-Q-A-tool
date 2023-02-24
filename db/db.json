@@ -99,7 +99,7 @@
       "user-image": "./assets/images/q-profile-img.svg",
       "description": "متغیر ENV رو توی فایلت تغییر بده درست میشه",
       "positive": 5,
-      "negative": 9
+      "negative": 10
     },
     {
       "id": 3,

@@ -7,6 +7,7 @@ import Input from '../components/input';
 import Textarea from '../components/textarea';
 
 import { Context } from '../context';
+import { BASE_API } from '../configs';
 
 import type { questionType } from '../context';
 
@@ -23,7 +24,7 @@ function NewQuestion({ onClose }: IProps) {
   const description = useRef<any>(null);
 
   const addNewQuestion = () => {
-    fetch('http://localhost:3004/questions', {
+    fetch(`${BASE_API}/questions`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

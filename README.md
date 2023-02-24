@@ -1,5 +1,10 @@
 This is a SPA with no browser routing due to the instructions which stated that the use of react-router is not allowed. It's clear that react-router is more efficient than react context for routing in SPAs.
 
+## Serve APIs
+
+in db directory run `json-server --watch db.json --port 3004`.
+APIs are on http://localhost:3004 by default. You can change url in src/configs.
+
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

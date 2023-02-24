@@ -6,6 +6,7 @@ import Button from '../components/button';
 import Card from '../components/card';
 
 import { Context } from '../context';
+import { BASE_API } from '../configs';
 
 import { ReactComponent as CommentIcon } from '../assets/images/Comment.svg';
 
@@ -31,7 +32,7 @@ function Questions() {
 
   useEffect(() => {
     if (setAnswers) {
-      fetch('http://localhost:3004/answers')
+      fetch(`${BASE_API}/answers`)
         .then((res) => res.json())
         .then((res) => {
           setAnswers(res);
