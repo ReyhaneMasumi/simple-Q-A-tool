@@ -1,4 +1,8 @@
-import { lazy, Suspense, useEffect, useMemo, useState } from 'react';
+import { lazy, Suspense, useMemo } from 'react';
+
+import usePath from '../hooks/usePath';
+
+import { ReactComponent as LoadingIcon } from '../assets/images/loading.svg';
 
 import type { LazyExoticComponent } from 'react';
 
@@ -10,20 +14,14 @@ const viewComponent: Record<string, LazyExoticComponent<() => JSX.Element>> = {
   '/details': Details,
 };
 
-const pathname = window.location.pathname;
-
 function Main() {
-  const [path, setPath] = useState(pathname);
-
-  useEffect(() => {
-    setPath(pathname);
-  }, []);
+  const { path } = usePath();
 
   const View = useMemo(() => viewComponent[path], [path]);
 
   return (
     <main className="sticky top-16 w-full h-main px-14 py-4 bg-backgroundColor overflow-auto">
-      <Suspense>
+      <Suspense fallback={<LoadingIcon />}>
         <View />
       </Suspense>
     </main>
