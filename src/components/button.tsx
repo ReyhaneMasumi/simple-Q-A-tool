@@ -1,3 +1,5 @@
+/* Button Component */
+
 import { memo } from 'react';
 
 import type { DetailedHTMLProps, ButtonHTMLAttributes } from 'react';
@@ -26,6 +28,7 @@ function Button({ variant = 'primary', ...props }: IProps) {
   return (
     <button
       {...props}
+      // Default styles are re-written by custom styles
       className={[
         'w-fit py-2 px-5 rounded-md font-bold text-xs',
         variantStyle[variant],

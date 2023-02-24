@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.App {
-  text-align: center;
-}
-
 @layer components {
   .title {
     @apply font-extrabold text-2xl text-Naturals/Black text-right;

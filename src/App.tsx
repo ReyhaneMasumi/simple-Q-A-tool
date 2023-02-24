@@ -1,12 +1,18 @@
 import React from 'react';
-import './App.css';
+
 import Layout from './layout';
+
+import { Provider } from './context';
+
+import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <Layout />
-    </div>
+    <Provider>
+      <div className="App">
+        <Layout />
+      </div>
+    </Provider>
   );
 }
 

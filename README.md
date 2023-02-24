@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+This is a SPA with no browser routing due to the instructions which stated that the use of react-router is not allowed. It's clear that react-router is more efficient than react context for routing in SPAs.
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

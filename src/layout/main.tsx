@@ -1,6 +1,8 @@
-import { lazy, Suspense, useMemo } from 'react';
+// This Component is responsible for loading the proper views such as questios or details
 
-import usePath from '../hooks/usePath';
+import { lazy, Suspense, useContext, useMemo } from 'react';
+
+import { Context } from '../context';
 
 import { ReactComponent as LoadingIcon } from '../assets/images/loading.svg';
 
@@ -10,15 +12,15 @@ const Details = lazy(() => import('../view/details'));
 const Questions = lazy(() => import('../view/questions'));
 
 const viewComponent: Record<string, LazyExoticComponent<() => JSX.Element>> = {
-  '/': Questions,
-  '/details': Details,
+  Home: Questions,
+  Details: Details,
 };
 
 function Main() {
-  const { path } = usePath();
+  const { page } = useContext(Context);
 
-  // use this solution instead of react-router-dom(Routes/Route)
-  const View = useMemo(() => viewComponent[path], [path]);
+  // To selecting a suitable view depending on the page which is selected
+  const View = useMemo(() => viewComponent[page ?? 'Home'], [page]);
 
   return (
     <main className="sticky top-16 w-full h-main px-14 py-4 bg-backgroundColor overflow-auto">

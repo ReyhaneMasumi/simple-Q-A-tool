@@ -1,4 +1,6 @@
-import { memo } from 'react';
+/* Textarea Component */
+
+import { forwardRef, memo } from 'react';
 
 import type { DetailedHTMLProps, TextareaHTMLAttributes } from 'react';
 
@@ -16,10 +18,12 @@ const variantStyle: { [key in Variants]: string } = {
   primary: 'bg-white border-Gray/Light',
 };
 
-function Textarea({ variant = 'primary', ...props }: IProps) {
+function Textarea({ variant = 'primary', ...props }: IProps, ref: any) {
   return (
     <textarea
       {...props}
+      ref={ref}
+      // Default styles are re-written by custom styles
       className={[
         'py-2 px-5 min-h-[200px] rounded-md black-normal-14',
         variantStyle[variant],
@@ -29,4 +33,4 @@ function Textarea({ variant = 'primary', ...props }: IProps) {
   );
 }
 
-export default memo(Textarea);
+export default memo(forwardRef(Textarea));
