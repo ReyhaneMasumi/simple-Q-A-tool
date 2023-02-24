@@ -20,6 +20,7 @@ const variantStyle: { [key in Variants]: string } = {
 function Button({ variant = 'primary', ...props }: IProps) {
   return (
     <button
+      {...props}
       className={
         'w-fit py-2 px-5 rounded-md font-bold text-xs ' +
         props.className +
